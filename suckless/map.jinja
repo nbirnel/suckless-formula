@@ -1,0 +1,5 @@
+{% set suckless = salt['grains.filter_by']({
+    'Debian': {
+        'pkg': 'libxinerama',
+    },
+}, merge=salt['pillar.get']('suckless:lookup')) %}
