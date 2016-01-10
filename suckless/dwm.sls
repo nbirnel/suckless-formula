@@ -1,10 +1,12 @@
+{% from "suckless/map.jinja" import suckless with context %}
+
 fetch-dwm:
   cmd.run:
     - name: |
         cd /tmp
-        wget -c http://git.suckless.org/dwm/snapshot/dwm-6.1.tar.bz2
-        tar xf dwm-6.1.tar.bz2
-        cd dwm-6.1
+        wget -c http://git.suckless.org/dwm/snapshot/dwm-{{ suckless.dwm.version }}.tar.bz2
+        tar xf dwm-{{ suckless.dwm.version }}.tar.bz2
+        cd dwm-{{ suckless.dwm.version }}
         wget https://raw.githubusercontent.com/nbirnel/dwm-config/master/config.h
         make
         make install
