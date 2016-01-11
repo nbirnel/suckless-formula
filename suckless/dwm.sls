@@ -14,3 +14,5 @@ fetch-dwm:
     - shell: /bin/sh
     - timeout: 300
     - unless: test -x /usr/local/bin/dwm
+  require:
+    - suckless.xinerama
